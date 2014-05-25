@@ -26,9 +26,8 @@ module Minecraft
             def send(action)
                 open if @connection.nil?
                 unless @connection.nil?
-                    str = "#{action.upcase}:#{@user}:#{@password}"
                     begin
-                        @connection.send(str, 0)
+                        @connection.send(make_request(action), 0)
                         recieve
                     rescue
                         raise "Connection Error"
