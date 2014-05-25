@@ -1,6 +1,6 @@
 # MinecraftRtoolkit
 
-TODO: Write a gem description
+A Simple Wrapper for [Remote Toolkit](https://forums.bukkit.org/threads/admn-remotetoolkit-r10-a15-restarts-crash-detection-auto-saves-remote-console-1-7-2.674)
 
 ## Installation
 
@@ -18,7 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'minecraft_rtoolkit'
+
+api = Minecraft::RToolkit.new(host: '127.0.0.1', port: 25561, user: 'admin', password: 'password')
+
+```
 
 ## Contributing
 

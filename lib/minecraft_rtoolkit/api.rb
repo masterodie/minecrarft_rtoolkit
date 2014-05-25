@@ -23,19 +23,19 @@ module Minecraft
                 @conn.send 'restart'
             end
 
-            def enbale
+            def enbale_restarts
                 @conn.send 'enbale'
             end
 
-            def disable
+            def disable_restarts
                 @conn.send 'disable'
             end
 
-            def forcestop
+            def force_stop
                 @conn.send 'forcestop'
             end
 
-            def forcerestart
+            def force_restart
                 @conn.send 'forcerestart'
             end
 
