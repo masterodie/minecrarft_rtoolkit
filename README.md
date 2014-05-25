@@ -1,6 +1,6 @@
 # MinecraftRtoolkit
 
-A Simple Wrapper for [Remote Toolkit](https://forums.bukkit.org/threads/admn-remotetoolkit-r10-a15-restarts-crash-detection-auto-saves-remote-console-1-7-2.674)
+A Simple API Wrapper for [Remote Toolkit](https://forums.bukkit.org/threads/admn-remotetoolkit-r10-a15-restarts-crash-detection-auto-saves-remote-console-1-7-2.674)
 
 ## Installation
 
@@ -23,7 +23,35 @@ require 'minecraft_rtoolkit'
 
 api = Minecraft::RToolkit.new(host: '127.0.0.1', port: 25561, user: 'admin', password: 'password')
 
+#Hold server
+api.stop
+
+#Unhold server
+api.start
+
+#Restart server
+api.restart
+
+#Force restart server
+api.force_restart
+
+#Force stop server
+api.force_stop
+
+#Disable scheduled restarts
+api.disable_restarts
+
+#Enable scheduled restarts
+api.enable_restarts
+
+#Reschedule restart
+api.reschedule_restart('1h 30m')
+
+#Get RToolkit version
+api.version
 ```
+
+For more information visit the [RToolkit Wiki](http://drdanick.com/wiki/index.php?title=Legacy_Release_10_documentation#In-game_commands) and [Forum Post](https://forums.bukkit.org/threads/admn-remotetoolkit-r10-a15-restarts-crash-detection-auto-saves-remote-console-1-7-2.674)
 
 ## Contributing
 
