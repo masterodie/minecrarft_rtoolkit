@@ -7,6 +7,9 @@ module Minecraft
                 @host = options[:host]
                 @port = options[:port]
                 @connection = nil
+
+                #define destructor
+                ObjectSpace.define_finalizer(self, method(:close))
             end
 
             def make_request(action)
@@ -16,12 +19,7 @@ module Minecraft
             def open
                 if @connection.nil?
                     @connection = UDPSocket.new()
-                    begin
-                        @connection.connect(@host, @port)
-                        @connection.send('Hello', 0)
-                    rescue
-                        raise "Connection Error"
-                    end
+                    @connection.connect(@host, @port)
                 end
             end
 
@@ -29,8 +27,28 @@ module Minecraft
                 open if @connection.nil?
                 unless @connection.nil?
                     str = "#{action.upcase}:#{@user}:#{@password}"
-                    @connection.send(str, 0)
-                    close
+                    begin
+                        @connection.send(str, 0)
+                        recieve
+                    rescue
+                        raise "Connection Error"
+                    end
+                end
+            end
+
+            def recieve
+                unless @connection.nil?
+                    begin
+                        response = @connection.recvfrom(32)
+                        case response[0]
+                        when 'response:success' then true
+                        when /^response:.*/ then false
+                        else
+                            response [0]
+                        end
+                    rescue
+                        raise "Connection Error"
+                    end
                 end
             end
 

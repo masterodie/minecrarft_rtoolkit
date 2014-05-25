@@ -38,6 +38,14 @@ module Minecraft
             def forcerestart
                 @conn.send 'forcerestart'
             end
+
+            def version
+                @conn.send 'version'
+            end
+
+            def reschedule_restart(time)
+                @conn.send "reschedule:#{time}"
+            end
         end
     end
 end
