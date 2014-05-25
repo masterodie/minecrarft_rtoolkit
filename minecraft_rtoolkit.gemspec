@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Minecraft::RToolkit::VERSION
   spec.authors       = ["Patrick Neff"]
   spec.email         = ["odie86@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A simple API wrapper for RToolkit}
+  spec.description   = %q{A simple API wrapper for RToolkit (https://forums.bukkit.org/threads/admn-remotetoolkit-r10-a15-restarts-crash-detection-auto-saves-remote-console-1-7-2.674/)}
+  spec.homepage      = "https://github.com/masterodie/minecraft_rtoolkit"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
