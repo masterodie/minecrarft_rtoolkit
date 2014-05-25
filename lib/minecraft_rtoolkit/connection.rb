@@ -30,7 +30,7 @@ module Minecraft
                         @connection.send(make_request(action), 0)
                         recieve
                     rescue
-                        raise "Connection Error"
+                        raise SocketError
                     end
                 end
             end
@@ -46,7 +46,7 @@ module Minecraft
                             response [0]
                         end
                     rescue
-                        raise "Connection Error"
+                        raise SocketError
                     end
                 end
             end
