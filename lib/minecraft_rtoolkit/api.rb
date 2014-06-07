@@ -24,7 +24,7 @@ module Minecraft
             end
 
             def enable_restarts
-                @conn.send 'enbale'
+                @conn.send 'enable'
             end
 
             def disable_restarts
