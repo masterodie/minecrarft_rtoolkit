@@ -23,7 +23,7 @@ module Minecraft
                 @conn.send 'restart'
             end
 
-            def enbale_restarts
+            def enable_restarts
                 @conn.send 'enbale'
             end
 
